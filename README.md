@@ -7,9 +7,6 @@ API da calculadora de rota mais barato feita com Java e Spring Boot.
   	-via linha de comando acesse a pasta onde você baixou o jar enviado por e-mail  
   	-coloque o input-routes.csv na mesma pasta do arquivo jar  
   	-execute via linha de comando: java -jar calculadoraRota.jar input-routes.csv    
-  
-# Estrutura dos arquivos/pacotes
-  	https://github.com/bopbruno/CalculadoraRotaMaisBarata
   	  
 # Explique as decisões de design adotadas para a solução
   	- Foi usado o algoritmo de Dijkstra para achar o caminho com o melhor custo. Essa estrutura de dados foi criada para resolver o tipo de problema em questão.  
