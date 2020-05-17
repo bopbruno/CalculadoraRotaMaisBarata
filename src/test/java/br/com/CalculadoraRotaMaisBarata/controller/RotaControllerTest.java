@@ -42,7 +42,7 @@ public class RotaControllerTest {
 		
 		mockMvc.perform(MockMvcRequestBuilders.get("/rota/GRU-BRZ"))
 		.andExpect(status().isNotFound())
-		.andExpect(content().string("Rota não encontrada!"));
+		.andExpect(content().string("Rota não encontrada!  Certifique-se de estar digidando o formato correto: DE-PARA"));
 		
 	}
 	

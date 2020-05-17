@@ -13,14 +13,14 @@ import br.com.CalculadoraRotaMaisBarata.service.RotaService;
 import br.com.CalculadoraRotaMaisBarata.util.CsvUtil;
 
 @Component
-@Profile("!test") 
-public class ApplicationRunnerTaskExecutor implements CommandLineRunner {
-    
+@Profile("!test")
+public class ApplicationCommandLineRunner implements CommandLineRunner {
+
 	@Autowired
 	private RotaService rotaService;
- 
-    @Override
-    public void run(String... args) throws Exception {
+
+	@Override
+	public void run(String... args) throws Exception {
 
 		if (args.length != 0) {
 			addRota(args);
@@ -43,12 +43,13 @@ public class ApplicationRunnerTaskExecutor implements CommandLineRunner {
 		try {
 			String[] deParaList = dado.split("-");
 			String melhorRota = rotaService.getMelhorRota(deParaList[0], deParaList[1]);
-			if(melhorRota.isEmpty())
-				System.out.println("Rota nao encontrada!");
+			if (melhorRota.isEmpty())
+				System.out.println("Rota nao encontrada! Certifique-se de estar digidando o formato correto: DE-PARA");
 			else
-				System.out.println(melhorRota);
+				System.out.println("best route: " + melhorRota);
 		} catch (Exception e) {
-			System.out.println("Erro ao obter a rota " + dado);
+			System.out.println(
+					"Erro ao obter a rota " + dado + "   Certifique-se de estar digidando o formato correto: DE-PARA");
 		}
 	}
 

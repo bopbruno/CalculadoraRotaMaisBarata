@@ -43,7 +43,7 @@ public class RotaController {
 		}
 		
 		if(rota == "") {
-			rota = "Rota não encontrada!";
+			rota = "Rota não encontrada!  Certifique-se de estar digidando o formato correto: DE-PARA";
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		}
 		return rota; 
